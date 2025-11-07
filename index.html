@@ -62,16 +62,13 @@
                 <th>Ville</th>
                 <th>Dernière mise à jour</th>
                 <th>Statut</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
-              <!-- les lignes seront injectées par JavaScript -->
+              <!-- lignes générées par JS -->
             </tbody>
           </table>
-        </section>
-
-        <section class="list" id="list" aria-live="polite">
-          <!-- stations supplémentaires si nécessaire -->
         </section>
 
         <footer class="help muted">
@@ -85,10 +82,8 @@
     </main>
   </div>
 
-  <!-- Toast container -->
   <div id="toast" role="status" aria-live="polite"></div>
 
-  <!-- Leaflet -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
   <script src="app.js"></script>
 </body>

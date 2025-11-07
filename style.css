@@ -35,8 +35,17 @@ html,body,#site{height:100%;margin:0;font-family:Inter, system-ui, -apple-system
 .small{font-size:12px}
 .muted{color:var(--muted)}
 
+/* table */
+.stations-table table { width: 100%; border-collapse: collapse; }
+.stations-table th, .stations-table td { padding: 8px; text-align: left; border-bottom: 1px solid #eee; }
+.stations-table th { background: #f0f4ff; }
+.stations-table tr:nth-child(even){ background:#fafafa; }
+
 /* toast */
 #toast{position:fixed;left:50%;transform:translateX(-50%);bottom:22px;background:rgba(0,0,0,0.75);color:white;padding:10px 14px;border-radius:10px;z-index:9999;display:none}
+
+/* toggle map */
+.map-hidden{display:none !important}
 
 /* responsive */
 @media (max-width:900px){

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CarbuAlert Mali — Trouver de l'essence</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+</head>
+<body>
+  <div id="site">
+    <header class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="CarbuAlert Mali logo" class="logo" onerror="this.style.display='none'">
+        <div>
+          <h1>CarbuAlert <span class="accent">Mali</span></h1>
+          <p class="tagline">Trouvez une station — Signalez la disponibilité — Aidez votre communauté</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <button id="themeToggle" class="icon-btn" title="Basculer thème">🌓</button>
+        <button id="loginBtn" class="ghost">Se connecter</button>
+      </nav>
+    </header>
+
+    <main class="main">
+      <aside class="panel" id="panel">
+        <section class="controls">
+          <button class="btn primary" id="locateBtn">Me localiser</button>
+          <button class="btn" id="reportBtn">Signaler une station</button>
+          <button class="btn ghost" id="refreshBtn">Rafraîchir</button>
+        </section>
+
+        <section class="filters">
+          <label>Carburant</label>
+          <select id="fuelFilter">
+            <option value="all">Tous</option>
+            <option value="essence">Essence</option>
+            <option value="gazole">Gazole</option>
+            <option value="gpl">GPL</option>
+          </select>
+
+          <label>Distance (km)</label>
+          <input type="range" id="distanceRange" min="1" max="500" value="200">
+          <div class="small muted">Rayon: <span id="distanceValue">200</span> km</div>
+        </section>
+
+        <section class="stats card">
+          <div><strong id="countStations">0</strong> stations visibles</div>
+          <div class="muted">Dernière MAJ: <span id="lastUpdate">Jamais</span></div>
+        </section>
+
+        <section class="list" id="list" aria-live="polite">
+          <!-- stations will be injected here -->
+        </section>
+
+        <footer class="help muted">
+          <p>CarbuAlert Mali — Prototype communautaire. Si tu signales une station, sois honnête — les données sont publiques.</p>
+        </footer>
+      </aside>
+
+      <section class="mapwrap">
+        <div id="map"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>

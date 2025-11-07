@@ -50,8 +50,28 @@
           <div class="muted">Dernière MAJ: <span id="lastUpdate">Jamais</span></div>
         </section>
 
+        <section class="map-toggle">
+          <button class="btn" id="toggleMapBtn">Afficher / Masquer la carte</button>
+        </section>
+
+        <section class="stations-table card">
+          <table id="stationsTable">
+            <thead>
+              <tr>
+                <th>Nom de la station</th>
+                <th>Ville</th>
+                <th>Dernière mise à jour</th>
+                <th>Statut</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- les lignes seront injectées par JavaScript -->
+            </tbody>
+          </table>
+        </section>
+
         <section class="list" id="list" aria-live="polite">
-          <!-- stations will be injected here -->
+          <!-- stations supplémentaires si nécessaire -->
         </section>
 
         <footer class="help muted">
